@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Видеоплеер</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css"
+      href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+  <style>
+    .player {
+      display: flex;
+      flex-direction: column;
+      width: 800px;
+      height: 600px;
+      box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.7);
+    }
+    .js-video-container {
+      width: 100%; height: 100%;
+    }
+    .buttons {
+      background-color: black;
+    }
+    button {
+      border-style: none;
+      color: white;
+      background-color: transparent;
+      font-size: large;
+      margin-right: 10px;
+      margin-left: 10px;
+      line-height: 2;
+    }
+    .js-fullscreen-button {
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="player" id="player">
+    <div class="js-video-container"></div>
+    <div class="buttons">
+      <button class="js-play-button"><i class="fa fa-play" aria-hidden="true"></i></button>
+      <button class="js-pause-button" hidden><i class="fa fa-pause" aria-hidden="true"></i></button>
+      <button class="js-volume-button"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+      <button class="js-mute-button"><i class="fa fa-volume-off" aria-hidden="true"></i></button>
+      <button class="js-fullscreen-button"><i class="fa fa-expand" aria-hidden="true"></i></i></i></button>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
+  <script src="player.js"></script>
+
+  <script type="text/javascript">
+    createPlayer({
+      elementId: 'player',
+      src: 'https://dvmn.org/media/filer_public/78/db/78db3456-3fd3-4504-9ed9-d2d1fd843c0b/highest_peak.mp4'
+    });
+  </script>
+
+</body>
+</html>
