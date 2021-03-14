@@ -13,36 +13,39 @@
       height: 600px;
       box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.7);
     }
-    .js-video-container {
-      width: 100%; height: 100%;
+    .video-container {
+      flex-grow: 1
     }
-    .buttons {
-      background-color: black;
+    .player-buttons {
+      display: flex;
+      flex-direction: row;
+      background: black;
     }
-    button {
+    .player-buttons-control {
       border-style: none;
+      cursor: pointer;
       color: white;
       background-color: transparent;
       font-size: large;
-      margin-right: 10px;
-      margin-left: 10px;
-      line-height: 2;
+      padding: 10px 15px 10px 12px;
+      width: 50px;
     }
-    .js-fullscreen-button {
-      float: right;
+    .button-separator {
+      flex-grow:1
     }
   </style>
 </head>
 <body>
   <div class="player" id="player">
-    <div class="js-video-container"></div>
-    <div class="buttons">
-      <button class="js-play-button"><i class="fa fa-play" aria-hidden="true"></i></button>
-      <button class="js-pause-button" hidden><i class="fa fa-pause" aria-hidden="true"></i></button>
-      <button class="js-volume-button"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
-      <button class="js-mute-button"><i class="fa fa-volume-off" aria-hidden="true"></i></button>
-      <button class="js-fullscreen-button"><i class="fa fa-expand" aria-hidden="true"></i></button>
-    </div>
+    <div class="js-video-container video-container"></div>
+      <div class="player-buttons">
+        <button class="js-play-button player-buttons-control" hidden><i class="fa fa-play" aria-hidden="true"></i></button>
+        <button class="js-pause-button player-buttons-control" hidden><i class="fa fa-pause" aria-hidden="true"></i></button>
+        <button class="js-mute-button player-buttons-control" hidden><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+        <button class="js-volume-button player-buttons-control" hidden><i class="fa fa-volume-off" aria-hidden="true"></i></button>
+        <div class="button-separator"></div>
+        <button class="js-fullscreen-button player-buttons-control"><i class="fa fa-expand" aria-hidden="true"></i></button>
+      </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
