@@ -38,8 +38,29 @@
       padding: 10px 25px 10px 0px;
       width: 29px;
     }
-    .separator {
-      flex-grow: 1;
+    .progress {
+      display: flex;
+      flex: 1;
+      background-color: black;
+      margin: 17px 8px 5px 8px;
+      height: 5px;
+      border-radius: 5px;
+    }
+    .progress-slider {
+      background-color: red;
+      height: 5px;
+      border-radius: 5px;
+    }
+    .circle {
+      height: 8px;
+      width: 8px;
+      background-color: red;
+      border-style: solid;
+      border-color: white;
+      border-radius: 50%;
+      margin-top: -3px;
+      margin-left: -6px;
+      display: inline-block;
     }
   </style>
 </head>
@@ -52,7 +73,10 @@
         <button class="js-mute-button player-buttons-control" hidden><i class="fa fa-volume-up" aria-hidden="true"></i></button>
         <button class="js-volume-button player-buttons-control" hidden><i class="fa fa-volume-off" aria-hidden="true"></i></button>
         <div class="js-current-time player-timer"></div>
-        <div class="separator player-timer"></div>
+        <div class="js-progress progress">
+          <div class="js-progress-slider progress-slider"></div>
+          <div class="circle"></div>
+        </div>
         <div class="js-duration player-timer"></div>
         <button class="js-fullscreen-button player-buttons-control"><i class="fa fa-expand" aria-hidden="true"></i></button>
       </div>
